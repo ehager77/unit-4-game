@@ -1,4 +1,3 @@
-
 var wins=0;
 var losses=0;
 
@@ -17,6 +16,7 @@ function playGame(){
     // $('#yourScore').text(yourScore);
     // console.log(yourScore);
 
+    $("#yourScore").text(yourScore);
 
     // Gen a random number and store it in yourNumber.
     yourNumber = Math.floor(Math.random() * 100)+20;
@@ -46,9 +46,20 @@ function playGame(){
     //Increment yourScore by number in Tequila
     
     $("#tequila").on("click", function(){
-        yourScore = yourScore + parseInt(tequila);
+        yourScore = yourScore + tequila;
         // Append yourScore to #yourScore
         $('#yourScore').text(yourScore);
+        if(yourNumber===yourScore){
+            wins++
+            $("#wins").text(wins)
+            $("#start-game").text("Play Again.")
+        }
+
+        else if(yourScore>yourNumber){
+            losses++
+            $("losses").text(losses);
+            $("#start-game").text("Play Again.")
+        };
         
     })
 
@@ -57,9 +68,20 @@ function playGame(){
     //Increment yourScore by number in Gin
     
     $("#gin").on("click", function (){
-        yourScore = yourScore + parseInt(gin);
+        yourScore = yourScore + gin;
         // Append yourScore to #yourScore
         $('#yourScore').text(yourScore);
+        if(yourNumber===yourScore){
+            wins++
+            $("#wins").text(wins)
+            $("#start-game").text("Play Again.")
+        }
+
+        else if(yourScore>yourNumber){
+            losses++
+            $("losses").text(losses);
+            $("#start-game").text("Play Again.")
+        };
         
 
     })
@@ -67,18 +89,40 @@ function playGame(){
     //Increment yourScore by number in Vodka
     
     $("#vodka").on("click", function(){
-        yourScore = yourScore + parseInt(vodka);
+        yourScore = yourScore + vodka;
         // Append yourScore to #yourScore
         $('#yourScore').text(yourScore);
+        if(yourNumber===yourScore){
+            wins++
+            $("#wins").text(wins)
+            $("#start-game").text("Play Again.")
+        }
+
+        else if(yourScore>yourNumber){
+            losses++
+            $("losses").text(losses);
+            $("#start-game").text("Play Again.")
+        };
         
     })
 
     //Increment yourScore by number in Rum
     
     $("#rum").on("click", function(){
-        yourScore = yourScore + parseInt(rum);
+        yourScore = yourScore + rum;
         // Append yourScore to #yourScore
         $('#yourScore').text(yourScore);
+        if(yourNumber===yourScore){
+            wins++
+            $("#wins").text(wins)
+            $("#start-game").text("Play Again.")
+        }
+
+        else if(yourScore>yourNumber){
+            losses++;
+            $("losses").text(losses);
+            $("#start-game").text("Play Again.");
+        };
         
     })
     
