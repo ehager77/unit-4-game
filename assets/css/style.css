@@ -1,0 +1,37 @@
+body{
+    background-image: url("https://myventurepad.com/wp-content/uploads/2017/10/lasvegas.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    height: 1000px;
+}
+
+button{
+    width: 100px;
+    margin-bottom: 10px;
+}
+
+#center-container{
+    border-radius: 8px;
+    text-align: center;
+    background: wheat;
+    padding: 20px;
+    height: 55%;
+    width: 60%;
+    margin-top: 12.5%;
+}
+
+.col-4{
+    padding-top: 10px;
+}
+
+.col-3{
+    padding-top: 10px;
+    align-content: center;
+}
+
+.btn-danger{
+    margin-top: 20px;
+    width: 200px;
+}
