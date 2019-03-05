@@ -8,11 +8,6 @@ function reset(){
     var gin;
     var vodka;
     var rum;
-    var yourScore=0;
-    var teqCount=0;
-    var ginCount=0;
-    var vodCount=0;
-    var rumCount=0;
 
 }
 
@@ -26,10 +21,10 @@ function playGame(){
     var vodka;
     var rum;
     var yourScore=0;
-    var teqCount=0;
-    var ginCount=0;
-    var vodCount=0;
-    var rumCount=0;
+
+    // Reset yourScore DOM to zero
+    $('#yourScore').text(yourScore);
+
 
     // Gen a random number and store it in yourNumber.
     yourNumber = Math.floor(Math.random() * 69)+30;
@@ -56,12 +51,47 @@ function playGame(){
     rum = drinkScores[3];
     console.log("Rum = " + rum);
 
-    //Increment Tequila score by number in Tequila
+    //Increment yourScore by number in Tequila
     
     $("#tequila").on("click", function(){
-
+        yourScore = yourScore + parseInt(tequila);
+        console.log(yourScore);
+        // Append yourScore to #yourScore
+        $('#yourScore').text(yourScore);
         
     })
+
+    //Increment yourScore by number in Gin
+    
+    $("#gin").on("click", function(){
+        yourScore = yourScore + parseInt(gin);
+        console.log(yourScore);
+        // Append yourScore to #yourScore
+        $('#yourScore').text(yourScore);
+        
+    })
+
+    //Increment yourScore by number in Vodka
+    
+    $("#vodka").on("click", function(){
+        yourScore = yourScore + parseInt(vodka);
+        console.log(yourScore);
+        // Append yourScore to #yourScore
+        $('#yourScore').text(yourScore);
+        
+    })
+
+    //Increment yourScore by number in Rum
+    
+    $("#rum").on("click", function(){
+        yourScore = yourScore + parseInt(rum);
+        console.log(yourScore);
+        // Append yourScore to #yourScore
+        $('#yourScore').text(yourScore);
+        
+    })
+
+    
 
 
 }
