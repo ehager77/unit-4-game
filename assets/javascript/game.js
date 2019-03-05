@@ -1,41 +1,33 @@
-function reset(){
 
-    var yourNumber=0;
-    var wins=0;
-    var losses=0;
-    var drinkScores=[];
-    var tequila;
-    var gin;
-    var vodka;
-    var rum;
-
-}
+var wins=0;
+var losses=0;
 
 function playGame(){
 
     // Reset Temporary Values
-
+    var yourNumber=0;
+    var yourScore=0;
     var drinkScores=[];
     var tequila;
     var gin;
     var vodka;
     var rum;
-    var yourScore=0;
 
     // Reset yourScore DOM to zero
-    $('#yourScore').text(yourScore);
+    // $('#yourScore').text(yourScore);
+    // console.log(yourScore);
 
 
     // Gen a random number and store it in yourNumber.
-    yourNumber = Math.floor(Math.random() * 69)+30;
-    console.log(yourNumber);
+    yourNumber = Math.floor(Math.random() * 100)+20;
 
     // Append yourNumber to #yourNumber
     $('#yourNumber').text(yourNumber);
+    console.log(yourNumber);
 
     // Gen 4 random numbers and push them to an array
     for(var i=0; i < 4; i++){
-        drinkRandom = Math.floor(Math.random() * 30);
+        drinkRandom = Math.floor(Math.random() * 12)+1;
         console.log(drinkRandom);
         drinkScores.push(drinkRandom);
     }
@@ -55,27 +47,27 @@ function playGame(){
     
     $("#tequila").on("click", function(){
         yourScore = yourScore + parseInt(tequila);
-        console.log(yourScore);
         // Append yourScore to #yourScore
         $('#yourScore').text(yourScore);
         
     })
 
+    console.log(yourScore);
+
     //Increment yourScore by number in Gin
     
-    $("#gin").on("click", function(){
+    $("#gin").on("click", function (){
         yourScore = yourScore + parseInt(gin);
-        console.log(yourScore);
         // Append yourScore to #yourScore
         $('#yourScore').text(yourScore);
         
+
     })
 
     //Increment yourScore by number in Vodka
     
     $("#vodka").on("click", function(){
         yourScore = yourScore + parseInt(vodka);
-        console.log(yourScore);
         // Append yourScore to #yourScore
         $('#yourScore').text(yourScore);
         
@@ -85,19 +77,16 @@ function playGame(){
     
     $("#rum").on("click", function(){
         yourScore = yourScore + parseInt(rum);
-        console.log(yourScore);
         // Append yourScore to #yourScore
         $('#yourScore').text(yourScore);
         
     })
-
     
-
-
 }
+
+
 
 $("#start-game").on("click", function(){
     playGame();
-});
 
-reset();
+});
