@@ -4,8 +4,8 @@ var losses=0;
 function playGame(){
 
     // Reset Temporary Values
-    var yourNumber=0;
-    var yourScore=0;
+    var yourScore = 0;
+    var yourNumber = 0;
     var drinkScores=[];
     var tequila;
     var gin;
@@ -56,14 +56,16 @@ function playGame(){
         }
 
         else if(yourScore>yourNumber){
+            console.log(yourScore);
+            console.log(yourNumber);
             losses++
-            $("losses").text(losses);
+            console.log(losses);
+            $("#losses").text(losses);
             $("#start-game").text("Play Again.")
+            playGame();
         };
         
     })
-
-    console.log(yourScore);
 
     //Increment yourScore by number in Gin
     
@@ -79,8 +81,10 @@ function playGame(){
 
         else if(yourScore>yourNumber){
             losses++
-            $("losses").text(losses);
-            $("#start-game").text("Play Again.")
+            console.log(losses);
+            $("#losses").text(losses);
+            $("#start-game").text("Play Again.");
+            playGame();
         };
         
 
@@ -98,10 +102,11 @@ function playGame(){
             $("#start-game").text("Play Again.")
         }
 
-        else if(yourScore>yourNumber){
+       else if(yourScore>yourNumber){
             losses++
-            $("losses").text(losses);
-            $("#start-game").text("Play Again.")
+            $("#losses").text(losses);
+            $("#start-game").text("Play Again.");
+            playGame();
         };
         
     })
@@ -120,17 +125,13 @@ function playGame(){
 
         else if(yourScore>yourNumber){
             losses++;
-            $("losses").text(losses);
+            $("#losses").text(losses);
             $("#start-game").text("Play Again.");
+            playGame();
         };
         
     })
     
 }
 
-
-
-$("#start-game").on("click", function(){
-    playGame();
-
-});
+playGame();
